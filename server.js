@@ -11,6 +11,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoUri = process.env.MONGODB_URI;
 
+// Render terminates HTTPS at a reverse proxy. Trust its forwarded protocol so
+// Express can send the secure owner-session cookie in production.
+app.set("trust proxy", 1);
+
 if (!mongoUri) {
   throw new Error(
     "MONGODB_URI is required. Copy .env.example to .env and add it.",
@@ -214,6 +218,9 @@ app.get("/api/admin/leads", requireAdmin, async (req, res, next) => {
   }
 });
 
+// Render uses this lightweight endpoint to confirm the web process is live.
+app.get("/health", (req, res) => res.status(200).json({ ok: true }));
+
 app.use(express.static(path.join(__dirname, "public")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "public", "index.html")),
@@ -233,7 +240,8 @@ async function start() {
     await db.collection("leads").insertMany(seedLeads);
     console.log("Database seeded.");
   }
-  app.listen(port, () =>
+  // Explicitly bind all interfaces: required by most managed hosts, including Render.
+  app.listen(port, "0.0.0.0", () =>
     console.log(`Northline estimator running on http://localhost:${port}`),
   );
 }
