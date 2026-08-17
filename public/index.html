@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northline Roofing | Instant Roof Estimate</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">NORTHLINE <span>ROOFING</span></a
+      ><a class="admin-link" href="/admin.html">Owner sign in →</a>
+    </header>
+    <main id="estimator-page">
+      <section class="hero">
+        <p class="eyebrow">COLUMBUS, OHIO</p>
+        <h1>A clear starting point<br />for your next roof.</h1>
+        <p>
+          Answer a few quick questions and receive a no-pressure estimate range.
+        </p>
+      </section>
+      <section class="estimator-card" aria-live="polite">
+        <div id="loading">Loading your estimate tool…</div>
+        <div id="estimator" hidden>
+          <div class="progress">
+            <span id="step-label"></span>
+            <div class="track"><i id="progress-bar"></i></div>
+          </div>
+          <form id="question-form"></form>
+          <div class="form-actions">
+            <button id="back" type="button" class="button secondary">
+              Back</button
+            ><button id="next" type="button" class="button">Continue</button>
+          </div>
+        </div>
+        <div id="result" hidden></div>
+        <div id="load-error" class="error-box" hidden>
+          We couldn’t load the estimator. Please refresh and try again.
+        </div>
+      </section>
+    </main>
+    <footer>
+      © 2026 Northline Roofing & Exteriors · Estimates are preliminary and
+      subject to an on-site inspection.
+    </footer>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northline | Owner Panel</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">NORTHLINE <span>ROOFING</span></a
+      ><button id="logout" class="text-button" hidden>Log out</button>
+    </header>
+    <main class="admin-shell">
+      <section id="login-view" class="login-card">
+        <p class="eyebrow">OWNER PANEL</p>
+        <h1>Welcome back.</h1>
+        <p>
+          Sign in to update estimator settings and view homeowner inquiries.
+        </p>
+        <form id="login-form">
+          <label
+            >Username<input
+              name="username"
+              autocomplete="username"
+              required /></label
+          ><label
+            >Password<input
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+          /></label>
+          <p id="login-error" class="field-error" hidden></p>
+          <button class="button">Sign in</button>
+        </form>
+        <p class="login-note">
+          Use the credentials defined in your server environment.
+        </p>
+      </section>
+      <section id="admin-view" hidden>
+        <div class="admin-title">
+          <div>
+            <p class="eyebrow">OWNER PANEL</p>
+            <h1>Estimator settings</h1>
+            <p>
+              Changes are live for new homeowners immediately after you save.
+            </p>
+          </div>
+          <span id="saved-status"></span>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="settings">Settings</button
+          ><button class="tab" data-tab="leads">Leads</button>
+        </div>
+        <section id="settings-tab" class="panel"></section>
+        <section id="leads-tab" class="panel" hidden></section>
+      </section>
+    </main>
+    <script src="/admin.js"></script>
+  </body>
+</html>

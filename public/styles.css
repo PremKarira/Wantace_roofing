@@ -1,0 +1,239 @@
+:root {
+  --ink: #142633;
+  --navy: #113044;
+  --orange: #e96b3c;
+  --cream: #f8f5ef;
+  --line: #dce2df;
+  --muted: #65747d;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+.site-header {
+  height: 76px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(24px, calc((100% - 1080px) / 2));
+  border-bottom: 1px solid #edf0ed;
+}
+.brand {
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 17px;
+}
+.brand span {
+  color: var(--orange);
+}
+.admin-link {
+  color: var(--navy);
+  font-size: 14px;
+  text-decoration: none;
+}
+.hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 72px 24px 110px;
+  background: linear-gradient(120deg, transparent 60%, #ece6db 60%);
+}
+.hero h1 {
+  font-size: clamp(35px, 6vw, 62px);
+  line-height: 1.03;
+  letter-spacing: -2.5px;
+  margin: 12px 0 20px;
+}
+.hero p:not(.eyebrow) {
+  max-width: 465px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+  color: var(--orange);
+  margin: 0;
+}
+.estimator-card {
+  width: min(700px, calc(100% - 32px));
+  margin: -55px auto 80px;
+  padding: 36px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 35px #20333a14;
+}
+.progress {
+  margin-bottom: 34px;
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.track {
+  height: 5px;
+  background: #e9ece8;
+  border-radius: 10px;
+  flex: 1;
+}
+.track i {
+  display: block;
+  height: 100%;
+  background: var(--orange);
+  border-radius: 10px;
+  transition: width 0.2s;
+}
+h2 {
+  font-size: 27px;
+  line-height: 1.18;
+  margin: 0 0 10px;
+  letter-spacing: -0.6px;
+}
+.hint {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 24px;
+}
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+}
+input {
+  width: 100%;
+  display: block;
+  border: 1px solid #bdc8c6;
+  border-radius: 4px;
+  padding: 14px;
+  margin-top: 8px;
+  font: inherit;
+  color: var(--ink);
+}
+input:focus {
+  outline: 2px solid #96b9c5;
+  border-color: var(--navy);
+}
+.options {
+  display: grid;
+  gap: 10px;
+}
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.option:hover,
+.option.selected {
+  border-color: var(--orange);
+  background: #fff9f6;
+}
+.option input {
+  width: auto;
+  margin: 0 12px 0 0;
+}
+.option span {
+  flex: 1;
+}
+.option b {
+  color: var(--orange);
+  font-size: 20px;
+}
+.contact-fields {
+  display: grid;
+  gap: 16px;
+}
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 34px;
+  gap: 12px;
+}
+.button {
+  border: 0;
+  border-radius: 4px;
+  background: var(--orange);
+  color: white;
+  cursor: pointer;
+  padding: 13px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+.button:hover {
+  background: #cf572c;
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.button.secondary {
+  background: #edf0ed;
+  color: var(--ink);
+}
+.field-error,
+.error-box {
+  color: #a62e21;
+  background: #fff1ef;
+  border: 1px solid #f1c7c0;
+  padding: 11px;
+  border-radius: 4px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+#result h2 {
+  font-size: clamp(29px, 5vw, 44px);
+  color: var(--navy);
+  margin: 13px 0 20px;
+}
+#result p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+footer {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding: 28px 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media (max-width: 560px) {
+  .site-header {
+    height: 64px;
+  }
+  .hero {
+    padding: 55px 24px 85px;
+  }
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+  .estimator-card {
+    padding: 24px 20px;
+    margin-top: -38px;
+  }
+  .option {
+    padding: 14px 12px;
+  }
+  .form-actions .button {
+    flex: 1;
+  }
+  .admin-link {
+    font-size: 12px;
+  }
+}
