@@ -10,6 +10,24 @@ A deliberately simple full-stack estimator for Northline Roofing & Exteriors. It
 - Owner login, editable labels and option rates, question on/off switches, editable modifiers, and a lead table.
 - First startup seeds the provided production configuration and three historical leads only if no config exists.
 
+## Screenshots
+
+### Public Estimator: Estimated Range
+
+![Estimated range](https://i.ibb.co/xtHRpW01/image.png)
+
+### Public Estimator: First Question
+
+![First question in public estimator](https://i.ibb.co/BH3vybS0/image.png)
+
+### Owner Panel: Settings
+
+![Owner panel settings](https://i.ibb.co/FbT5Fj16/image.png)
+
+### Owner Panel: Leads
+
+![Owner panel leads](https://i.ibb.co/VprYWBsN/image.png)
+
 ## Stack
 
 - Node.js + Express
